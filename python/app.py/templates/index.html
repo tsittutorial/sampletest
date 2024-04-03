@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  <style>
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+      padding-top: 60px; 
+    }
+  
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto; 
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; 
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+  
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  
+  <script>
+    window.onload = function() {
+      var modal = document.getElementById('myModal');
+      var span = document.getElementsByClassName('close')[0];
+      modal.style.display = 'block';
+      span.onclick = function() {
+        modal.style.display = 'none';
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      }
+    };
+  </script>
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: montserrat;
+    }
+
+    nav {
+      background: black;
+      height: 80px;
+      width: 100%;
+    }
+
+    label.logo {
+      color: white;
+      font-size: 35px;
+      line-height: 80px;
+      padding: 0 100px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      float: right;
+      margin-right: 60px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 5px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 17px;
+      padding: 7px 13px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    nav ul li a:hover{
+      text-decoration: none;
+      color: coral;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 17px;
+      line-height: 3;
+      border-radius: 50px;
+      width: 114px;
+      background-color: coral;
+      color: white;
+      border: none;
+      margin-top: 6px;
+    }
+
+    .checkbtn {
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+    }
+
+    #check {
+      display: none;
+    }
+
+    @media (max-width: 952px) {
+      label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+      }
+      nav ul li a {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 858px) {
+      .checkbtn {
+        display: block;
+      }
+      ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+      }
+      nav ul li {
+        display: block;
+        margin: -15px 0;
+      }
+      nav ul li a {
+        font-size: 20px;
+      }
+      a:hover,
+      a.active {
+        background: none;
+        color: #0082e6;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: 3;
+        border-radius: 27px;
+        width: 139px;
+        background-color: coral;
+        color: black;
+        border: none;
+        margin-top: 6px;
+      }
+      #check:checked~ul {
+        left: 0;
+      }
+    }
+
+    .banner img {
+      width: 100%;
+      margin-top: 0px;
+    }
+
+    .bg-img {
+      background-image: url("https://dshssite.files.wordpress.com/2016/06/cropped-amazoncom-inc-brings-professional-home-services.jpg");
+      margin-top: 15px;
+      margin-bottom: 22px;
+      min-height: 611px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    .container {
+      position: absolute;
+      right: 0;
+      margin: 20px;
+      max-width: 550px;
+      padding: 16px;
+      background-color: white;
+      margin-top: auto;
+    }
+
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=phone] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus,
+    input[type=email]:focus,
+    input[type=phone]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    .btn {
+      background-color: coral;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .btn:hover {
+      opacity: 1;
+    }
+
+    .footer {
+      background-color: rgb(30, 2, 56);
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer p {
+      margin: 10px 0 10px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">Home Service</label>
+    <ul>
+      <li><a href="#card1">Home</a></li>
+      <li><a href="#card2"><button>Contact</button></a></li>
+    </ul>
+  </nav>
+  <section id="card1">
+  <div class="banner">
+    <img src="https://mobisoftinfotech.com/resources/wp-content/uploads/2018/08/Banner.png" />
+  </div>
+</section>
+
+<section id="card2">
+  <div class="bg-img">
+    <form action="{{ url_for('submit_form') }}" method="post">
+      <div class="container">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" Required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" Required>
+
+        <label for="phone"><b>Phone</b></label>
+        <input type="phone" id="phone" name="phone" placeholder="Enter Phone" pattern="[1-9]{1}[0-9]{9}" Required>
+
+        <label for="Message"><b>Message</b></label>
+        <input type="text" placeholder="Enter message" name="message">
+
+        <input type="submit" class="btn" name="submit" value="Make an Appointment">
+      </div>
+    </form>
+  </div>
+</section>
+  <div class="footer">
+    <p>Copyrights © 2024 TOWNY. All Rights Reserved<br></p>
+    <p>Terms & Conditions | Privacy Policy | Contactus</p>
+  </div>
+  {% if submitted %}
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Thank you for your submission. We will get back to you shortly.</p>
+    </div>
+  </div>
+  <script>
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    modal.style.display = "block";
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  {% endif %}
+
+</body>
+
+</html>
